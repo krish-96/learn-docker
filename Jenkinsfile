@@ -10,13 +10,12 @@ pipeline{
                 echo "cloning the data..."
                 git branch: 'main', url: 'https://github.com/krish-96/learn-docker.git'
                  echo "cloning of the data completed..."
-                 sh "sudo service docker status"
             }
         }
         stage("Build"){
             steps{
                 echo "Building the app..."
-                sh 'docker build -t jenkins-docker:latest .'
+                sh 'sudo docker build -t jenkins-docker:latest .'
                 sh 'docker run -it --name jenkins-docker --network host -d jenkins-docker'
                 echo "Building the app completed..."
             }
