@@ -15,7 +15,7 @@ pipeline{
         stage("Build"){
             steps{
                 echo "Building the app..."
-                sh 'sudo docker build -t jenkins-docker:latest .'
+                sh 'docker build -t jenkins-docker:latest .'
                 sh 'docker run -it --name jenkins-docker --network host -d jenkins-docker'
                 echo "Building the app completed..."
             }
