@@ -10,6 +10,7 @@ pipeline{
                 echo "cloning the data..."
                 git branch: 'main', url: 'https://github.com/krish-96/learn-docker.git'
                  echo "cloning of the data completed..."
+                 sh "sudo service docker status"
             }
         }
         stage("Build"){
